@@ -54,5 +54,55 @@ public class Main {
             }
             System.out.println();
         }
+
+        /**zadanie 3 - Serwis samochodowy
+         * Napisz program dla serwisu samochodowego. Samochód ma markę oraz cenę.
+         * Dodaj kilka samochodów oraz wyświetl.
+         */
+        System.out.println("------------Zadanie 3-------------");
+        //dodajmy pierwszy samochód
+        char[] brand1 = {'M','e','r','c','e','d','e','s',' ','C','o','u','p','e'};
+        double price1 = 9500.5;
+        boolean newCar01 = false;
+        Car car1 = new Car(brand1, price1, newCar01);
+
+        //dodajemy drugi samochód
+        char[] brand02 = {'S','k','o','d','a',' ','O','c','t','a','v','i','a'};
+        double price2 = 129500;
+        Car car2 = new Car(brand02, price2, true);
+
+        //dodajemy trzeci samochód
+        char[] brand3 = {'V','o','l','k','v','a','g','e','n',' ','P','o','l','o'};
+        double price3 = 12300.5;
+        Car car3 = new Car(brand3, price3, false);
+
+        //dodajemy czwarty samochód
+        char[] brand4 = {'O','p','e','l',' ','A','s','t','r','a'};
+        double price4 = 42500;
+        Car car4 = new Car(brand4, price4, false);
+
+        //tworzymy flotę samochodów - tablicę naszych samochodów
+        Car[] cars = new Car[4];
+        cars[0] = car1;
+        cars[1] = car2;
+        cars[2] = car3;
+        cars[3] = car4;
+
+        //wyświetlimy naszą tablicę samochdów z użyciem pętli foreach
+        for (Car car: cars){
+            System.out.print("Brand: ");
+            for (char c : car.brand){
+                System.out.print(c);
+            }
+            System.out.println();
+            System.out.print("Price: " + car.price);
+            System.out.println();
+            if (car.newCar == true){
+                System.out.println("The car is new");
+            } else {
+                System.out.println("The car is used");
+            }
+            System.out.println();
+        }
     }
 }
